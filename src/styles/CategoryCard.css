@@ -1,0 +1,10 @@
+.category-card {
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+

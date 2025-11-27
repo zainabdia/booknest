@@ -1,0 +1,67 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  color: #222;
+  text-align: center;
+}
+
+
+.hero {
+  padding: 100px 20px;
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px 5px rgba(20, 11, 102, 0.7);
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 20px auto 0;
+  font-size: 1.2rem;
+}
+
+
+.mission {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.mission p {
+  max-width: 700px;
+  margin: 20px auto 0;
+  line-height: 1.6;
+}
+
+
+.story {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.story p {
+  max-width: 700px;
+  margin: 20px auto 0;
+  line-height: 1.6;
+}
+
+
+.socials {
+  background-color: #222;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.socials p {
+  max-width: 600px;
+  margin: 20px auto 0;
+  font-size: 1.2rem;
+}
+
+
+
