@@ -1,3 +1,31 @@
+# BookNest
+
+## Project Description
+BookNest is an online bookstore website built with React. Users can browse books, view services, and contact the team. The website is responsive and works on desktop and mobile devices.
+
+## Setup Instructions
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/booknest.git
+
+## Screenshots of the UI
+
+### Homepage
+![Homepage](./screenshots/home.png)
+![Homepage](./screenshots/hometwo.png)
+### About
+![About](./screenshots/about.png)
+![About](./screenshots/abouttwopng)
+![About](./screenshots/aboutthree.png)
+### Books Page
+![Books](./screenshots/books.png)
+###services page
+![Services](./screenshots/services.png)
+### Mobile View
+![Homepage](./screenshots/homemobile.png)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
