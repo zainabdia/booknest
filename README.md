@@ -11,18 +11,18 @@ git clone https://github.com/zainabdia/booknest.git
 ## Screenshots of the UI
 
 ### Homepage
-![Homepage](./screenshots/home.png)
-![Homepage](./screenshots/hometwo.png)
+![Homepage](./screenshotss/home.png)
+![Homepage](./screenshotss/hometwo.png)
 ### About
-![About](./screenshots/about.png)
-![About](./screenshots/abouttwopng)
-![About](./screenshots/aboutthree.png)
+![About](./screenshotss/about.png)
+![About](./screenshotss/abouttwopng)
+![About](./screenshotss/aboutthree.png)
 ### Books Page
-![Books](./screenshots/books.png)
+![Books](./screenshotss/books.png)
 ###services page
-![Services](./screenshots/services.png)
+![Services](./screenshotss/services.png)
 ### Mobile View
-![Homepage](./screenshots/homemobile.png)
+![Homepage](./screenshotss/homemobile.png)
 
 
 
