@@ -6,7 +6,7 @@ BookNest is an online bookstore website built with React. Users can browse books
 ## Setup Instructions
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/booknest.git
+git clone https://github.com/zainabdia/booknest.git
 
 ## Screenshots of the UI
 
