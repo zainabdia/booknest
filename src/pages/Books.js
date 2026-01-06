@@ -1,26 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 import BookCard from "../Components/BookCard";
 import "../styles/Books.css";
-import img1984 from "../assets/1984.jpg";
-import imgAlchemist from "../assets/alchemist.jpg";
-import imgAtomic from "../assets/atomic.jpg";
 
 const Books = () => {
-  const allBooks = [
-    { title: "1984", author: "George Orwell", price: 10, img: img1984 },
-    { title: "The Alchemist", author: "Paulo Coelho", price: 12, img: imgAlchemist },
-    { title: "Atomic Habits", author: "James Clear", price: 15, img: imgAtomic },
- 
-  ];
-
+  const [books, setBooks] = useState([]);
   const [search, setSearch] = useState("");
 
-  const filteredBooks = allBooks.filter((book) =>
-    book.title.toLowerCase().includes(search.toLowerCase()) ||
-    book.author.toLowerCase().includes(search.toLowerCase())
-  );
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const res = await axios.get(`http://localhost:5000/api/books?q=${search}`);
+        setBooks(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchBooks();
+  }, [search]);
 
   return (
     <>
@@ -39,13 +39,13 @@ const Books = () => {
       </div>
 
       <div className="grid">
-        {filteredBooks.map((book, index) => (
+        {books.map((book) => (
           <BookCard
-            key={index}
+            key={book.id}
             title={book.title}
             author={book.author}
             price={book.price}
-            img={book.img}
+            img={book.cover_image_url}
           />
         ))}
       </div>

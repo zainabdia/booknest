@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from "axios";
 import '../styles/Contact.css';
 import logo from '../assets/logo_icon.jpg';
 import NavBar from '../Components/NavBar';
@@ -6,26 +7,43 @@ import Footer from '../Components/Footer';
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [success, setSuccess] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!form.name || !form.email || !form.message) {
       alert('Please fill in all fields.');
       return;
     }
-    
-    alert(`Form submitted:\n${JSON.stringify(form, null, 2)}`);
-   
-    setForm({ name: '', email: '', message: '' });
+
+ 
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    try {
+      await axios.post("http://localhost:5000/api/contact", {
+        full_name: form.name,
+        email: form.email,
+        message: form.message,
+        user_id: user?.id, 
+      });
+
+      setSuccess(true);
+      setForm({ name: '', email: '', message: '' });
+
+      setTimeout(() => setSuccess(false), 3000);
+    } catch (err) {
+      console.log(err);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
     <>
       <NavBar />
-<div className="contact">
+      <div className="contact">
         <div className="leftSide" aria-hidden="true">
-          <img src={logo} alt="logo" style={{ width: '100%', height: '100%', objectFitover: 'c' }} />
+          <img src={logo} alt="logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
 
         <div className="rightSide">
@@ -63,6 +81,8 @@ const Contact = () => {
             ></textarea>
 
             <button type="submit">Send Message</button>
+
+            {success && <p style={{ color: "green", marginTop: "10px" }}>message sent successfully 💌</p>}
           </form>
         </div>
       </div>

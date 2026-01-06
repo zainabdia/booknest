@@ -5,6 +5,9 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Books from './pages/Books';
 import Services from './pages/Services';
+import AddBook from './pages/AddBook';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -15,7 +18,10 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/books" element={<Books />} />
         <Route path="/services" element={<Services />} />
-      </Routes>
+        <Route path="/add-book" element={<AddBook />} />
+        <Route path="/signup" element={<Signup />} />
+       <Route path="/login" element={<Login />} />
+  </Routes>
     </Router>
   );
 }
