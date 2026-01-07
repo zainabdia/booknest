@@ -52,6 +52,25 @@ app.get("/api/books/:id", (req, res) => {
   });
 });
 
+app.post("/api/books", (req, res) => {
+  const { title, author, price, cover_image_url } = req.body;
+
+  if (!title || !author || price === undefined) {
+    return res.status(400).json({ error: "title, author, price are required" });
+  }
+
+  const q =
+    "INSERT INTO books (title, author, price, cover_image_url) VALUES (?,?,?,?)";
+
+  db.query(q, [title, author, price, cover_image_url || null], (err, data) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ error: "failed to add book" });
+    }
+    return res.status(201).json({ ok: true, id: data.insertId });
+  });
+});
+
 app.post("/api/contact", (req, res) => {
   const { full_name, email, message, user_id } = req.body;
 
@@ -113,7 +132,8 @@ app.post("/api/login", (req, res) => {
     return res.json(rows[0]); // frontend stores this in localStorage
   });
 });
-app.listen(5000, () => {
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
   console.log("✅ backend running on http://localhost:5000");
 });
 
